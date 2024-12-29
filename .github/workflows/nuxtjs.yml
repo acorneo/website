@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies and build
         run: |
           bun install
-          nuxt generate
+          bun generate
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
