@@ -26,12 +26,26 @@ import MemePicture from "../public/meme.png";
 
   <h2>это интересно</h2>
   <CoolCard>
-    <h3>здесь будут веселые приколы, потом</h3>
-    <p>когда у меня будет на это время и желание</p>
+    <h3>конвертер единиц измерения</h3>
+    <p>можно перевести температуру и расстояние, если вы<br />вдруг из USA</p>
+    <NuxtLink to="/apps/converter"><button>посмотреть</button></NuxtLink>
   </CoolCard>
 </template>
 
 <style scoped>
+button:hover {
+  transform: scale(1.1);
+  transition: transform 0.05s linear;
+}
+button {
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: black;
+  font-family: "Victor Mono", serif;
+  border: none;
+  font-weight: 400;
+  font-style: normal;
+}
 .hero {
   margin-top: 0.5rem;
   display: grid;

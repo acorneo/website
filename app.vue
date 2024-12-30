@@ -4,6 +4,8 @@ import DesktopNavigation from "./components/DesktopNavigation.vue";
 
 const isMobile = ref(false);
 const isMenuOpen = ref(false);
+const isRotated = ref(false);
+const girOn = ref(true);
 
 const checkDevice = () => {
   isMobile.value = window.innerWidth <= 767;
@@ -15,6 +17,11 @@ const toggleMenu = () => {
 
 onMounted(() => {
   checkDevice();
+  if (girOn.value === true) {
+    const girInterval = setInterval(() => {
+      isRotated.value = !isRotated.value;
+    }, 600);
+  }
   window.addEventListener("resize", checkDevice);
 });
 </script>
@@ -25,7 +32,13 @@ onMounted(() => {
   <div id="main">
     <main>
       <DesktopNavigation />
-      <img :src="Girlandua" style="width: 100%" /><NuxtPage />
+      <img
+        :src="Girlandua"
+        style="width: 100%; transition: transform 0s"
+        :style="{
+          transform: isRotated ? 'rotate(180deg) scaleY(-1)' : 'rotate(0deg)',
+        }"
+      /><NuxtPage />
     </main>
   </div>
 </template>
