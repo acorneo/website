@@ -9,4 +9,5 @@ export default defineNuxtConfig({
       publicDir: path.join(__dirname, "dist"),
     },
   },
+  ssr: true,
 });
